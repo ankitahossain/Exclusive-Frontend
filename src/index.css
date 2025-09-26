@@ -1,0 +1,51 @@
+@import "tailwindcss"; 
+
+
+@theme{
+
+    /* todo: common colors*/
+  --color-primary-color:#000000;
+  --color-secondary-color:#DB4444;
+  --color-button-color:#00FF66;
+  --color-card-bg :#00FF66;
+
+  --color-white:#FFFFFF;
+  --color-light_FA:#FAFAFA;
+
+
+
+    /* todo:font-family */
+  --font-poppins : "Poppins", sans-serif;
+  --font-inter: "Inter", sans-serif;
+
+}
+
+  
+
+@layer base{
+  
+ *{
+    margin:0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+ }
+
+ ul,li,ol{
+    list-style: none;
+ }
+
+ a{
+    text-decoration: none;
+    display: inline-block;
+ }
+
+ img{
+    vertical-align: middle ;
+ }
+
+ .container{
+    margin: 0 auto;
+    padding: 0 15px;
+ }
+}
