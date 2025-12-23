@@ -6,6 +6,7 @@
     /* todo: common colors*/
   --color-primary-color:#000000;
   --color-secondary-color:#DB4444;
+  --color-white-color:#f5f5f5;
   --color-button-color:#00FF66;
   --color-card-bg :#00FF66;
 
@@ -47,5 +48,30 @@
  .container{
     margin: 0 auto;
     padding: 0 15px;
+ } 
+ .amount{
+  position: relative;
+
+ }
+ .amount::after{
+   position:absolute;
+   content:"2";
+   left:39%;
+   top: -52%;
+   width: 25px;
+   height:25px;
+   background-color:var(--color-secondary-color);
+   border-radius: 50%;
+   text-align: center;
+   line-height: 25px;
+   color:var(--color-white-color);
+   font-size: 15px;
+   -webkit-border-radius: 50%;
+   -moz-border-radius: 50%;
+   -ms-border-radius: 50%;
+   -o-border-radius: 50%;
+   border: 1px solid; 
+   
+
  }
 }
