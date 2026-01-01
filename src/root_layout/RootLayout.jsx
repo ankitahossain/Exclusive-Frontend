@@ -1,6 +1,7 @@
 import React from 'react'
 import Header from '../commonComponents/Header'
 import Navbar from '../commonComponents/navbar'
+import Banner from '../commonComponents/Homepage/Banner'
 
 
 const Root_Layout = () => {
@@ -8,6 +9,7 @@ const Root_Layout = () => {
     <div>
       <Header/>
       <Navbar/>
+      <Banner/>
     </div>
   )
 }

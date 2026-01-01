@@ -48,16 +48,24 @@ const Navbar = () => {
           {/* Left */}
           <h2 className="text-[24px] leading-[24px] font-bold ">Exclusive</h2>
 
-          <ul className="flex gap-13 items-center bg-">
+          <ul className="flex gap-13">
             {NavItem.map((item) => (
-              <li key={item.id} className="text-[17px] font-semibold">
-                <NavLink
-                  to={`/${item.name.toLowerCase()}`}
-                  className={({ isActive }) => (isActive ? "active" : "")}
-                >
-                  {item.name}
-                </NavLink>
-              </li>
+            <li key={item.id} className="text-[17px] font-semibold">
+  <NavLink
+    to={`/${item.name.toLowerCase()}`}
+  className={({ isActive }) =>
+  `relative after:content-[''] after:absolute after:left-0 after:-bottom-1
+   after:w-0 after:h-[2px] after:bg-blue-400
+   after:transition-all after:duration-300
+   hover:after:w-full
+   ${isActive ? "after:w-full text-blue-400" : "text-black"}`
+}
+
+  >
+    {item.name}
+  </NavLink>
+</li>
+
             ))}
           </ul>
 
