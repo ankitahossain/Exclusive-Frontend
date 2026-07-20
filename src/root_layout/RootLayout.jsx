@@ -1,17 +1,21 @@
-import React from 'react'
-import Header from '../commonComponents/Header'
-import Navbar from '../commonComponents/navbar'
-import Banner from '../commonComponents/Homepage/Banner'
-
+import React from "react";
+import { Outlet } from "react-router";
+import Header from "../commonComponents/Header";
+import Navbar from "../commonComponents/Navbar";
+import Banner from "../commonComponents/Homepage/Banner";
+import FlashSale from "../commonComponents/Homepage/FlashSale";
 
 const Root_Layout = () => {
   return (
-    <div>
-      <Header/>
-      <Navbar/>
-      <Banner/>
-    </div>
-  )
-}
+    <>
+      <Header />
+      <Navbar />
+      <Banner />
+      <FlashSale />
 
-export default Root_Layout
+      <Outlet />
+    </>
+  );
+};
+
+export default Root_Layout;

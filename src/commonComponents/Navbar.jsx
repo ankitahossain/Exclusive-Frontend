@@ -6,8 +6,7 @@ import { IoMdStarOutline } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
 import { LuShoppingBag, LuUser } from "react-icons/lu";
 import { RiLogoutCircleLine } from "react-icons/ri";
-import { NavLink } from "react-router"; // ✅ FIXED
-
+import { NavLink } from "react-router"; 
 const Navbar = () => {
   const NavItem = [
     { id: 1, name: "Home" },
@@ -23,7 +22,6 @@ const Navbar = () => {
     setAccount((prev) => !prev);
   };
 
-  // ✅ FIXED: click outside handler
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (
@@ -45,7 +43,7 @@ const Navbar = () => {
     <div className="navbar bg-transparent">
       <div className="container">
         <div className="flex justify-between items-center">
-          {/* Left */}
+    
           <h2 className="text-[24px] leading-[24px] font-bold ">Exclusive</h2>
 
           <ul className="flex gap-13">
