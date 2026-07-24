@@ -7,7 +7,8 @@ import { FaStar } from "react-icons/fa";
 const ProductCard = () => {
 
   return (
-    <div className = "mt-10"> 
+  <div>
+      <div className = "mt-10"> 
         <div className = "w-full">
      <div className = "bg-white-color px-3 py-4 pb-[55px] rounded relative group cursor-pointer">
               <div className = "flex items-center justify-between">
@@ -42,6 +43,66 @@ const ProductCard = () => {
          </div>
         </div>
     </div> 
+        {/* Image */}
+      <div className="relative bg-[#F5F5F5] h-[250px] rounded flex justify-center items-center">
+
+        <img
+          src="/images/product.png"
+          alt=""
+          className="w-[170px]"
+        />
+
+        {/* Icons */}
+        <div className="absolute top-3 right-3 flex flex-col gap-2">
+
+          <button className="w-9 h-9 rounded-full bg-white flex justify-center items-center">
+            <IoHeartOutline />
+          </button>
+
+          <button className="w-9 h-9 rounded-full bg-white flex justify-center items-center">
+            <IoEyeOutline />
+          </button>
+
+        </div>
+
+      </div>
+
+      {/* Details */}
+
+      <h3 className="font-medium mt-4">
+        The north coat
+      </h3>
+
+      <div className="flex gap-3 mt-2">
+
+        <span className="text-secondary-color font-semibold">
+          $260
+        </span>
+
+        <span className="line-through text-gray-400">
+          $360
+        </span>
+
+      </div>
+
+      {/* Rating */}
+
+      <div className="flex items-center gap-2 mt-2">
+
+        <div className="flex text-[#FFAD33]">
+          <FaStar />
+          <FaStar />
+          <FaStar />
+          <FaStar />
+          <FaStar />
+        </div>
+
+        <span className="text-gray-500">(65)</span>
+
+      </div>
+
+  </div>
+    
   )
 }
 

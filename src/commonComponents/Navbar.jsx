@@ -40,7 +40,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="navbar bg-transparent">
+    <div className="navbar bg-transparent mt-10">
       <div className="container">
         <div className="flex justify-between items-center">
     

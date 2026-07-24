@@ -1,3 +1,10 @@
+import { CiMobile4 } from "react-icons/ci";
+import { RiComputerLine } from "react-icons/ri";
+import { BsSmartwatch } from "react-icons/bs";
+import { FaCameraRetro } from "react-icons/fa";
+import { FaHeadphonesSimple } from "react-icons/fa6";
+import { GiConsoleController } from "react-icons/gi";
+
  export const category = [
     {
         id:1,
@@ -52,3 +59,37 @@
  
  
  ]
+
+export const categorybrowse = [
+  {
+    id: 1,
+    name: "Phones",
+    img: CiMobile4,
+  },
+  {
+    id: 2,
+    name: "Computers",
+    img: RiComputerLine,
+  },
+  {
+    id: 3,
+    name: "SmartWatch",
+    img: BsSmartwatch,
+  },
+  {
+    id: 4,
+    name: "Camera",
+    img: FaCameraRetro,
+  },
+  {
+    id: 5,
+    name: "HeadPhones",
+    img: FaHeadphonesSimple,
+  },
+  {
+    id: 6,
+    name: "Gaming",
+    img: GiConsoleController,
+  },
+];
+

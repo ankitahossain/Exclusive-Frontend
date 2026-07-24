@@ -4,6 +4,8 @@ import Header from "../commonComponents/Header";
 import Navbar from "../commonComponents/Navbar";
 import Banner from "../commonComponents/Homepage/Banner";
 import FlashSale from "../commonComponents/Homepage/FlashSale";
+import Category from "../commonComponents/Category";
+import BestSelling from "../pages/BestSelling";
 
 const Root_Layout = () => {
   return (
@@ -12,6 +14,9 @@ const Root_Layout = () => {
       <Navbar />
       <Banner />
       <FlashSale />
+      <Category />
+      <BestSelling />
+      
 
       <Outlet />
     </>

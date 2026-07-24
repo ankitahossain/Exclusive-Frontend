@@ -19,25 +19,26 @@ const FlashSale = () => {
 
 function SampleNextArrow({ onClick }) {
   return (
-    <div
+    <button
       onClick={onClick}
-      className="absolute -top-20 right-0 z-30 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center cursor-pointer"
+      className="absolute top-[-85px] right-0 w-12 h-12 rounded-full bg-[#F5F5F5] flex items-center justify-center z-20 hover:bg-black-color hover:text-white-color transition"
     >
-      <IoArrowForwardOutline className="text-2xl text-black" />
-    </div>
+      <IoArrowForwardOutline size={22} />
+    </button>
   );
 }
 
 function SamplePrevArrow({ onClick }) {
   return (
-    <div
+    <button
       onClick={onClick}
-      className="absolute -top-20 right-16 z-30 w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center cursor-pointer"
+      className="absolute top-[-85px] right-16 w-12 h-12 rounded-full bg-[#F5F5F5] flex items-center justify-center z-20 hover:bg-black-color hover:text-white-color transition"
     >
-      <IoArrowBackOutline className="text-2xl text-black" />
-    </div>
+      <IoArrowBackOutline size={22} />
+    </button>
   );
 }
+
   return (
     <div className='mt-[140px] mb-[60px]'>
       <div className = "container">
@@ -45,7 +46,7 @@ function SamplePrevArrow({ onClick }) {
         <Heading title ={"Today's"} description={"Flash Sales"} />
       <Timer />
      </div>
-    <div className="relative mt-10">
+    <div className="relative mt-10 border-b-[1px] border-black-color mb-10">
   <Slider {...settings}>
     {[...new Array(10)].map((_, index) => (
       <div key={index} className="pr-6">

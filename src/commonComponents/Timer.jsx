@@ -1,82 +1,50 @@
-import React, {useState,useEffect} from 'react'
-import { IoEllipsisVertical } from "react-icons/io5";
+import React, { useEffect, useState } from "react";
 
 const Timer = () => {
-  const [time, settime] = useState(60* 1000);
-  useEffect(()=>{
-    const worker = new Worker(new URL("../../src/CountDownWorker.js", import.meta.url));
-    worker.postMessage(time);
-    worker.onmessage = (e)=>{
-     settime(e.data);
-    };
-  }, []);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
-  if (time <= 0) return;
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
 
-  const timer = setTimeout(() => {
-    settime((prev) => prev - 1000);
-  }, 1000);
+    return () => clearInterval(interval);
+  }, []);
 
-  return () => clearTimeout(timer);
-}, [time]);
+  const days = String(currentTime.getDate()).padStart(2, "0");
+  const hours = String(currentTime.getHours()).padStart(2, "0");
+  const minutes = String(currentTime.getMinutes()).padStart(2, "0");
+  const seconds = String(currentTime.getSeconds()).padStart(2, "0");
 
-  // format the countDown date 
-  const formatDate = (miliSecond)=>{
-    let total_second = parseInt(Math.floor(miliSecond/1000));
-    let total_minutes = parseInt(Math.floor(total_second/60));
-    let total_hours = parseInt(Math.floor(total_minutes/60));
-    let days = parseInt(Math.floor(total_hours/24));
-    let second = parseInt(Math.floor(total_second % 60));
-    let minutes = parseInt(Math.floor(total_minutes % 60));
-    let hours = parseInt(Math.floor(total_hours % 60));
-
-    
-
-    return { days, hours ,minutes, second};
-  };
-  const { days, hours ,minutes, second} = formatDate(time);
-  console.log(days,hours,minutes,second);
   return (
-    <div className = "flex items-center gap-x-4">
-      <div className = "flex flex-col items-start ">
-        <span className='font-medium text-[12px] font-poppins text-black-color'>Days</span>
-        <div className = "flex items-center gap-x-3">
-            <h1 className="text-[32px] font-bold"> {String(days).padStart(2, "0")} </h1>
-              <span className =" text-red-600 text-xl"><IoEllipsisVertical /></span>
-        </div>
-    
+    <div className="flex items-center gap-x-4">
+      <div>
+        <p className="text-xs font-medium">Day</p>
+        <h1 className="text-[32px] font-bold">{days}</h1>
       </div>
 
+      <span className="text-red-500 text-3xl font-bold">:</span>
 
-      <div className = "flex flex-col items-start ">
-        <span className='font-medium text-[12px] font-poppins text-black-color'>Hours</span>
-        <div className = "flex items-center gap-x-3">
-            <h1 className="text-[32px] font-bold">{String(hours).padStart(2, "0")}</h1>
-              <span className =" text-red-600 text-xl"><IoEllipsisVertical /></span>
-        </div>
-      
-      </div>
-    
-
-      <div className = "flex flex-col items-start ">
-        <span className='font-medium text-[12px] font-poppins text-black-color'>Minutes</span>
-        <div className='flex items-center gap-x-3'>
-        <h1 className="text-[32px] font-bold">{String(minutes).padStart(2, "0")}</h1> 
-        <span className =" text-red-600 text-xl"><IoEllipsisVertical /></span>
-        </div>
-     
-      </div>
-     
-
-      <div className = "flex flex-col items-start ">
-        <span className='font-medium text-[12px] font-poppins text-black-color'>Seconds</span>
-        <h1 className="text-[32px] font-bold" >{String(second).padStart(2, "0")}</h1>
+      <div>
+        <p className="text-xs font-medium">Hours</p>
+        <h1 className="text-[32px] font-bold">{hours}</h1>
       </div>
 
+      <span className="text-red-500 text-3xl font-bold">:</span>
+
+      <div>
+        <p className="text-xs font-medium">Minutes</p>
+        <h1 className="text-[32px] font-bold">{minutes}</h1>
+      </div>
+
+      <span className="text-red-500 text-3xl font-bold">:</span>
+
+      <div>
+        <p className="text-xs font-medium">Seconds</p>
+        <h1 className="text-[32px] font-bold">{seconds}</h1>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Timer
-
+export default Timer;
