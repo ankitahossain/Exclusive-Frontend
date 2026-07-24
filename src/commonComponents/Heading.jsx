@@ -17,22 +17,7 @@ const Heading = ({ title = "Today's", description = "Flash Sales" }) => {
       </h1>
     </div> 
 
-    <div className="flex justify-between items-end mb-10">
-  <Heading
-    title="This Month"
-    description="Best Selling Products"
-  />
-
-  <button className="px-12 py-4 bg-secondary-color text-white rounded font-poppins font-medium hover:bg-red-600 transition">
-    View All
-  </button>
-</div> 
-<div className="grid grid-cols-4 gap-8">
-  <ProductCard />
-  <ProductCard />
-  <ProductCard />
-  <ProductCard />
-</div>
+    
    </div>
     
   );
